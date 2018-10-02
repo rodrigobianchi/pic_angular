@@ -13,7 +13,7 @@ export class TipoAnuncioService {
   private tipoAnuncioUrl: string;
 
   constructor(private http: HttpClient) { 
-    this.tipoAnuncioUrl = `${environment.apiBaseUrl}/tipo-anuncio`;
+    this.tipoAnuncioUrl = `${environment.apiBaseUrl}/tipos`;
   }
 
   findAll(): Observable<TipoAnuncio[]>{
