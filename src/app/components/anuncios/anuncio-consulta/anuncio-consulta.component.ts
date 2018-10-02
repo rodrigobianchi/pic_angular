@@ -19,8 +19,8 @@ export class AnuncioConsultaComponent implements OnInit {
   tipos: Observable<TipoAnuncio[]>;
   filtro: AnuncioFiltro;
   anuncios: Anuncio[];
-  formulario: FormGroup; 
-  
+  formulario: FormGroup;
+
   //Atributos para modal de exclusão
   nomeAnuncio: string;
   idAnuncio: number;
@@ -30,6 +30,7 @@ export class AnuncioConsultaComponent implements OnInit {
   anuncioSelecionado: Anuncio;
 
   @ViewChild(ConfirmaExclusaoComponent) componenteExclusao: ConfirmaExclusaoComponent;
+  p: number = 1;
 
   constructor(private formBuilder: FormBuilder,
     private tipoAnuncioService: TipoAnuncioService,
@@ -43,7 +44,7 @@ export class AnuncioConsultaComponent implements OnInit {
     this.createFormGroup();
   }
 
-  private createFormGroup(): void{
+  private createFormGroup(): void {
     this.formulario = this.formBuilder.group({
       tipo: [null],
       nome: [null]
@@ -58,7 +59,7 @@ export class AnuncioConsultaComponent implements OnInit {
     })
   }
 
-  public confirmaExclusao(anuncio: Anuncio): void{
+  public confirmaExclusao(anuncio: Anuncio): void {
     this.nomeAnuncio = anuncio.nome;
     this.idAnuncio = anuncio.id;
     this.anuncioSelecionado = anuncio;
@@ -71,7 +72,7 @@ export class AnuncioConsultaComponent implements OnInit {
     console.log(mensagem);
   }
 
-  public excluirAnuncio(idExclusao: number){
+  public excluirAnuncio(idExclusao: number) {
     console.log(idExclusao);
     this.anuncioService.delete(idExclusao).subscribe(resultado => {
       // this.anuncioService.findAll().subscribe(resultado => {

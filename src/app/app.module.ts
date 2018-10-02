@@ -8,11 +8,11 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
-import ErrorHttpInterceptor from './utils/interceptors/error-http-interceptor';
 
 //Configurando o locale pt-BR
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
+import { ErrorHttpInterceptor } from './utils/interceptors/error-http-interceptor';
 registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
